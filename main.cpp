@@ -28,18 +28,6 @@
 using i_vector = std::vector<int>;
 
 
-// This is probably not needed.
-double deltaE(int S0, int Sn)
-{
-    double H;
-    int J;
-    J = 1;
-    H = 0;
-    // '''Energy difference for a spin flip'''
-
-    return 2 * S0 * (H + J * Sn);
-}
-
 int main(int argc, const char *argv[])
 {
     const parameters params = get_params();
