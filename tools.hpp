@@ -17,6 +17,7 @@ using d_vector = std::vector<double>;
 
 d_vector linspace(double min, double max, int nbr, bool endpoint = false);
 
+
 void initLattice(std::vector<int> &S);
 
 inline int randomChoice(const std::vector<int> &vec)

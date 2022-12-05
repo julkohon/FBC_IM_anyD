@@ -38,6 +38,8 @@ int main(int argc, const char *argv[])
     std::uniform_real_distribution<> dis_real(0, 1);
 
     d_vector magnetization(mod.get_Ntrials());
+    d_vector magnetization1(mod.get_S1_size());
+    d_vector magnetization_core(mod.get_S_core_size());
     d_vector magnetisation_noabs(mod.get_Ntrials());
     d_vector energy(mod.get_Ntrials());
     d_vector tNum = linspace(params.Tmin, params.Tmax, params.nT, true);
@@ -105,8 +107,6 @@ int main(int argc, const char *argv[])
                 pocket.erase(s);
             }
 
-//            std::cout << "maxPocketSize: " << maxPocketSize
-//                      << " \t spend time mS: " << timer.elapsed() << std::endl;
             for (std::unordered_set<int>::const_iterator nbrI = cluster.cbegin();
                  nbrI != cluster.cend(); ++nbrI)
             {
@@ -123,12 +123,21 @@ int main(int argc, const char *argv[])
                 energy[j] += (nbrEnergy / 2.0);
             }
 
-            //std::cout << "e_ " << energy[j] << std::endl;
             cluster.clear();
+            for (int boundary = 0; boundary < mod.get_S1_size(); boundary++){
+                // for Fixed boundary conditions uncomment next line:
+                S[mod.get_S1(boundary)] = 1;
+                magnetization1[j] += S[mod.get_S1(boundary)];
+            }
+            magnetization1[j] = std::abs(magnetization1[j]);
+            for (int core = 0; core < mod.get_S_core_size(); core++){
+                magnetization_core[j] += S[mod.get_S_core(core)];
+            }
+            magnetization_core[j] = std::abs(magnetization_core[j]);
             magnetisation_noabs[j]=std::accumulate(S.begin(), S.end(), 0.0);
             magnetization[j] = std::abs(std::accumulate(S.begin(), S.end(), 0.0));
-            txt << params.D << "\t" << params.L << std::fixed << std::setprecision(4) << "\t" << tNum[i] << "\t"  << magnetization[j]
-                << "\t" << energy[j] << std::endl;
+            txt << params.D << "\t" << params.L << std::fixed << std::setprecision(6) << "\t" << tNum[i] << "\t"  << magnetization[j]
+                << "\t" << energy[j] << "\t" << magnetization1[j] << "\t" << magnetization_core[j] <<std::endl;
             
             if (j >= cutOff)
             {

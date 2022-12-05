@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -g CMakeFiles/muster.dir/main.cpp.o CMakeFiles/muster.dir/config.cpp.o CMakeFiles/muster.dir/tools.cpp.o CMakeFiles/muster.dir/model.cpp.o -o muster 

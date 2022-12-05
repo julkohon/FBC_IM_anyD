@@ -37,6 +37,8 @@ void initLattice(std::vector<int> &S)
     static std::random_device rd;
     static std::mt19937 gen(rd());
     static std::uniform_int_distribution<> dis(0, 1);
+
+
     for (auto &i : S)
     {
 //       i = dis(gen) * 2 - 1;

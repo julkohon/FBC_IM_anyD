@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/julkohon-lab/Documents/FBC_IM_anyD/build",
+  "command": "/usr/bin/c++    -Wall -Wextra -g -std=gnu++17 -o CMakeFiles/muster.dir/main.cpp.o -c /home/julkohon-lab/Documents/FBC_IM_anyD/main.cpp",
+  "file": "/home/julkohon-lab/Documents/FBC_IM_anyD/main.cpp"
+},
+{
+  "directory": "/home/julkohon-lab/Documents/FBC_IM_anyD/build",
+  "command": "/usr/bin/c++    -Wall -Wextra -g -std=gnu++17 -o CMakeFiles/muster.dir/config.cpp.o -c /home/julkohon-lab/Documents/FBC_IM_anyD/config.cpp",
+  "file": "/home/julkohon-lab/Documents/FBC_IM_anyD/config.cpp"
+},
+{
+  "directory": "/home/julkohon-lab/Documents/FBC_IM_anyD/build",
+  "command": "/usr/bin/c++    -Wall -Wextra -g -std=gnu++17 -o CMakeFiles/muster.dir/tools.cpp.o -c /home/julkohon-lab/Documents/FBC_IM_anyD/tools.cpp",
+  "file": "/home/julkohon-lab/Documents/FBC_IM_anyD/tools.cpp"
+},
+{
+  "directory": "/home/julkohon-lab/Documents/FBC_IM_anyD/build",
+  "command": "/usr/bin/c++    -Wall -Wextra -g -std=gnu++17 -o CMakeFiles/muster.dir/model.cpp.o -c /home/julkohon-lab/Documents/FBC_IM_anyD/model.cpp",
+  "file": "/home/julkohon-lab/Documents/FBC_IM_anyD/model.cpp"
+}
+]
